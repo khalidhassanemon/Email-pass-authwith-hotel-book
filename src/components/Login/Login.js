@@ -1,14 +1,18 @@
 import { useContext } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import UserContext, { AuthContext } from '../../Context/UserContext';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../Context/UserContext';
 import './Login.css';
+
 const Login = () => {
 
+    const location = useLocation();
+
+    const from = location.state?.from?.pathname || '/home';
     const myStyle = {
         backgroundImage: `url('https://cdn.pixabay.com/photo/2016/05/27/08/51/mobile-phone-1419275__340.jpg')`
     };
     const { SignIn } = useContext(AuthContext);
-    const navigate=useNavigate();
+    const navigate = useNavigate();
     const handleSubmit = (event) => {
         event.preventDefault();
         const form = event.target;
@@ -16,14 +20,14 @@ const Login = () => {
         const password = form.password.value;
         const confirm = form.password.value;
 
-      SignIn(email,password)
-      .then(result=>{
-        const user=result.user;
-        console.log(user);
-        form.reset();
-        navigate('/home');
-      })
-      .catch(error=>console.log("Error",error));
+        SignIn(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                form.reset();
+                navigate(from, { replace: true });
+            })
+            .catch(error => console.log("Error", error));
     }
 
     return (

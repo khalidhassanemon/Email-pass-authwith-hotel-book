@@ -5,9 +5,9 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { AuthContext } from '../../Context/UserContext';
 const Header = () => {
-    const { user, logOut } = useContext(AuthContext);
+    const { user, logOut} = useContext(AuthContext);
     return (
-        <div>
+        <div className='mb-4'>
 
             <Navbar bg="dark" variant='dark' expand="lg">
                 <Container>

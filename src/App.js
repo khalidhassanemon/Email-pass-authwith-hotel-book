@@ -5,6 +5,7 @@ import app from './components/firebase/firebase.config';
 import Home from './components/Home/Home';
 import Images from './components/Image/Images';
 import Login from './components/Login/Login';
+import PrivateRoutes from './components/Routes/PrivateRoutes';
 import SignUp from './components/Sign Up/SignUp';
 import Main from './layouts/Main';
 
@@ -21,7 +22,7 @@ const router = createBrowserRouter([
       },
       {
           path:'/home',
-          element:<Home></Home>
+          element:<PrivateRoutes><Home></Home></PrivateRoutes>
       },
       {
         path:'login',
