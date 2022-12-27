@@ -17,10 +17,10 @@ const Images = () => {
                     <img
                         className="d-block w-100"
                         src={Images2}
-                        alt="First slide"
+                        alt="second slide"
                     />
                     <Carousel.Caption className='-mt-100'>
-                        <h3>Al Burj Hotel</h3>
+                        <h3>Tourism</h3>
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>

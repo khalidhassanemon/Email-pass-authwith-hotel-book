@@ -27,7 +27,7 @@ const Home = () => {
                                 <img
                                     className="d-block w-100"
                                     src={Images2}
-                                    alt="First slide"
+                                    alt="second slide"
                                 />
                             </Carousel.Item>
                         </Carousel>

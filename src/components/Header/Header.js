@@ -7,7 +7,7 @@ import { AuthContext } from '../../Context/UserContext';
 const Header = () => {
     const { user, logOut} = useContext(AuthContext);
     return (
-        <div className='mb-4'>
+        <div className='mb-2'>
 
             <Navbar bg="dark" variant='dark' expand="lg">
                 <Container>
